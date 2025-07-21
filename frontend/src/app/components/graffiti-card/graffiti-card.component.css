@@ -40,3 +40,24 @@
 .graffiti-card button:hover {
   background-color: #333;
 }
+
+
+
+.like-buttons button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 5px 12px;
+  cursor: pointer;
+  margin: 0px 2px;
+  transition: background-color 0.3s;
+}
+
+.like-buttons button.active {
+  background-color: rgb(121, 139, 94); 
+}
+
+.like-buttons button.active:nth-child(2) {
+  background-color: #784240; 
+}
