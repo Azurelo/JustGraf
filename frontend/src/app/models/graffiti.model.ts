@@ -7,4 +7,6 @@ export interface Graffiti {
   imageUrl: string;
   description: string;
   createdAt?: string;
+  likes?: number;
+  dislikes?: number;
 }

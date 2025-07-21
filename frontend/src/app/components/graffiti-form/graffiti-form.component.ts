@@ -14,7 +14,9 @@ export class GraffitiFormComponent {
     artist: '',
     location: '',
     imageUrl: '',
-    description: ''
+    description: '',
+    likes: 0,
+    dislikes: 0
   };
 
   constructor(

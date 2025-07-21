@@ -1,1 +1,12 @@
-<p>graffiti-card works!</p>
+<div class="graffiti-card">
+  <img [src]="graffiti.imageUrl" alt="{{graffiti.title}}">
+  <h3>{{ graffiti.title }}</h3>
+  <p><strong>By:</strong> {{ graffiti.artist }}</p>
+  <p>{{ graffiti.location }}</p>
+  <p>{{ graffiti.description }}</p>
+
+  <div class="buttons">
+    <button (click)="like()">👍 {{ graffiti.likes || 0 }}</button>
+    <button (click)="dislike()">👎 {{ graffiti.dislikes || 0 }}</button>
+  </div>
+</div>

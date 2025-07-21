@@ -1,10 +1,5 @@
+<app-carousel></app-carousel>
 <h2>🖌️ Recent Graffiti Submissions</h2>
 <div class="gallery-grid">
-  <div *ngFor="let g of graffitiList" class="graffiti-card">
-    <img [src]="g.imageUrl" alt="{{g.title}}">
-    <h3>{{ g.title }}</h3>
-    <p><strong>By:</strong> {{ g.artist }}</p>
-    <p>{{ g.location }}</p>
-    <p>{{ g.description }}</p>
-  </div>
+  <app-graffiti-card *ngFor="let g of graffitiList" [graffiti]="g"></app-graffiti-card>
 </div>

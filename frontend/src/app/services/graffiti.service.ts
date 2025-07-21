@@ -26,4 +26,13 @@ export class GraffitiService {
   updateGraffiti(id: string, data: Graffiti): Observable<Graffiti> {
     return this.http.put<Graffiti>(`${this.apiUrl}/${id}`, data);
   }
+
+  likeGraffiti(id: string): Observable<Graffiti> {
+  return this.http.put<Graffiti>(`${this.apiUrl}/${id}/like`, {});
+  }
+
+  dislikeGraffiti(id: string): Observable<Graffiti> {
+    return this.http.put<Graffiti>(`${this.apiUrl}/${id}/dislike`, {});
+  }
+
 }

@@ -40,4 +40,24 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// Like
+router.put('/:id/like', async (req, res) => {
+  try {
+    const graffiti = await Graffiti.findByIdAndUpdate(req.params.id, { $inc: { likes: 1 } }, { new: true });
+    res.json(graffiti);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// Dislike
+router.put('/:id/dislike', async (req, res) => {
+  try {
+    const graffiti = await Graffiti.findByIdAndUpdate(req.params.id, { $inc: { dislikes: 1 } }, { new: true });
+    res.json(graffiti);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 module.exports = router;

@@ -1,0 +1,42 @@
+.graffiti-card {
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin: 1rem;
+  text-align: center;
+}
+
+.graffiti-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.graffiti-card h3 {
+  margin: 0.5rem 0;
+  color: #ffc107;
+}
+
+.graffiti-card .buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.graffiti-card button {
+  background: none;
+  color: #fff;
+  border: 1px solid #666;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.graffiti-card button:hover {
+  background-color: #333;
+}
