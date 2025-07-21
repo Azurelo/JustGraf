@@ -1,0 +1,32 @@
+<h1>TEST: This is the Submit Page</h1>
+
+<h2>Submit New Graffiti</h2>
+
+<form (ngSubmit)="submitGraffiti()" #graffitiForm="ngForm">
+  <label>
+    Title:
+    <input type="text" name="title" [(ngModel)]="graffiti.title" required />
+  </label><br />
+
+  <label>
+    Artist:
+    <input type="text" name="artist" [(ngModel)]="graffiti.artist" required />
+  </label><br />
+
+  <label>
+    Location:
+    <input type="text" name="location" [(ngModel)]="graffiti.location" />
+  </label><br />
+
+  <label>
+    Image URL:
+    <input type="text" name="imageUrl" [(ngModel)]="graffiti.imageUrl" />
+  </label><br />
+
+  <label>
+    Description:
+    <textarea name="description" [(ngModel)]="graffiti.description"></textarea>
+  </label><br />
+
+  <button type="submit">Submit</button>
+</form>

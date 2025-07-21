@@ -1,0 +1,31 @@
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.graffiti-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.graffiti-card:hover {
+  transform: scale(1.03);
+}
+
+.graffiti-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.graffiti-card h3 {
+  margin-top: 0.5rem;
+  color: #ffdd57;
+}
