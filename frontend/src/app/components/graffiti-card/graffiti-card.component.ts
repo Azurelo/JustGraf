@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Graffiti } from '../../models/graffiti.model';
 import { GraffitiService } from '../../services/graffiti.service';
 
@@ -9,9 +9,11 @@ import { GraffitiService } from '../../services/graffiti.service';
 })
 export class GraffitiCardComponent {
   @Input() graffiti!: Graffiti;
-
+  @Output() deleted = new EventEmitter<void>();
   liked = false;
   disliked = false;
+  isEditing = false;
+  editData: any = {};
 
   constructor(private graffitiService: GraffitiService) {}
 
@@ -51,5 +53,31 @@ export class GraffitiCardComponent {
     }
 
     this.graffitiService.updateGraffiti(this.graffiti._id, this.graffiti).subscribe();
+  }
+
+  openEditModal() {
+    this.editData = { ...this.graffiti };
+    this.isEditing = true;
+  }
+
+  closeEditModal() {
+    this.isEditing = false;
+  }
+
+  submitEdit() {
+    if (!this.graffiti._id) return;
+
+    this.graffitiService.updateGraffiti(this.graffiti._id, this.editData).subscribe((updated) => {
+      Object.assign(this.graffiti, updated);
+      this.closeEditModal();
+    });
+  }
+
+  delete() {
+    if (confirm('Are you sure you want to delete this graffiti?') && this.graffiti._id) {
+      this.graffitiService.deleteGraffiti(this.graffiti._id).subscribe(() => {
+        this.deleted.emit();
+      });
+    }
   }
 }

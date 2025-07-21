@@ -19,13 +19,14 @@ export class GraffitiService {
     return this.http.post<Graffiti>(this.apiUrl, data);
   }
 
-  deleteGraffiti(id: string): Observable<any> {
+  updateGraffiti(id: string, data: any) {
+    return this.http.put<Graffiti>(`${this.apiUrl}/${id}`, data);
+  }
+
+  deleteGraffiti(id: string) {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
-  updateGraffiti(id: string, data: Graffiti): Observable<Graffiti> {
-    return this.http.put<Graffiti>(`${this.apiUrl}/${id}`, data);
-  }
 
   likeGraffiti(id: string): Observable<Graffiti> {
   return this.http.put<Graffiti>(`${this.apiUrl}/${id}/like`, {});

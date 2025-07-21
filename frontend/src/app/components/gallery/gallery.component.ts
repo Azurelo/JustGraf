@@ -18,4 +18,9 @@ export class GalleryComponent implements OnInit {
       this.graffitiList = data.reverse(); // most recent first
     });
   }
+  loadGraffiti() {
+    this.graffitiService.getGraffiti().subscribe(data => {
+      this.graffitiList = data;
+  });
+  }
 }
