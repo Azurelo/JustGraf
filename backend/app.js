@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
-const graffitiRoutes = require('./routes/graffitiRoutes');
+const graffitiRoutes = require('./routes/graffiti.routes');
 
 const app = express();
 app.use(cors());
