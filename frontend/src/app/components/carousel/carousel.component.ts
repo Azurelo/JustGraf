@@ -21,7 +21,7 @@ export class CarouselComponent {
     },
     {
       title: 'Color Burst',
-      imageUrl: 'https://www.creativefabrica.com/wp-content/uploads/2023/05/29/Color-burst-background-306-Graphics-70863391-1.jpg',
+      imageUrl: 'https://ironlak.com/wp-content/uploads/2011/01/C051199.jpg',
       artist: 'Echo',
       location: 'Paris'
     }
