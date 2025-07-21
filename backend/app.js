@@ -3,7 +3,6 @@ require('dotenv').config({ path: __dirname + '/.env' });
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-require('dotenv').config();
 
 const graffitiRoutes = require('./routes/graffiti.routes');
 
