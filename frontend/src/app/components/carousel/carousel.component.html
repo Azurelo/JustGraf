@@ -1,8 +1,8 @@
-<div class="weekly">Weekly Showcase</div>
 <ngb-carousel *ngIf="featuredGraffiti.length > 0" [interval]="5000" [wrap]="true" [pauseOnHover]="true">
   <ng-template ngbSlide *ngFor="let piece of featuredGraffiti">
     <img [src]="piece.imageUrl" class="d-block w-100" style="max-height: 400px; object-fit: cover;" alt="...">
     <div class="carousel-caption d-none d-md-block">
+      <h4>Weekly Showcase</h4>
       <h5>{{ piece.title }}</h5>
       <p>By {{ piece.artist }} - {{ piece.location }}</p>
     </div>
