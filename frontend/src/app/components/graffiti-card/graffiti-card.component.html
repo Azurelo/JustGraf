@@ -10,26 +10,37 @@
     <button (click)="toggleDislike()" [class.active]="disliked">👎 {{ graffiti.dislikes || 0 }}</button>
   </div>
 
-  <div class="action-buttons mt-2">
-    <button class="btn btn-sm btn-primary me-2" (click)="openEditModal()">Edit</button>
+  <div class="action-buttons">
+    <button class="btn btn-sm btn-primary" (click)="openEditModal()">Edit</button>
     <button class="btn btn-sm btn-danger" (click)="delete()">Delete</button>
   </div>
-</div>
 
-<ng-template [ngIf]="isEditing">
-  <div class="modal-backdrop" (click)="closeEditModal()"></div>
-  <div class="modal">
+  <!-- Edit Modal -->
+<div class="editmodal-backdrop" *ngIf="isEditing" (click)="closeEditModal()"></div>
+<div class="editmodal" *ngIf="isEditing">
+  <div class="editmodal-content">
+    <h4>Edit Graffiti Post</h4>
     <form (ngSubmit)="submitEdit()">
-      <h4>Edit Graffiti</h4>
-      <input type="text" [(ngModel)]="editData.title" name="title" required placeholder="Title" />
-      <input type="text" [(ngModel)]="editData.artist" name="artist" placeholder="Artist" />
-      <input type="text" [(ngModel)]="editData.location" name="location" placeholder="Location" />
-      <input type="text" [(ngModel)]="editData.imageUrl" name="imageUrl" placeholder="Image URL" />
-      <textarea [(ngModel)]="editData.description" name="description" placeholder="Description"></textarea>
-      <div class="mt-2">
-        <button type="submit" class="btn btn-success btn-sm">Save</button>
-        <button type="button" class="btn btn-secondary btn-sm" (click)="closeEditModal()">Cancel</button>
+      <label for="title">Title</label>
+      <input type="text" [(ngModel)]="editData.title" name="title" id="title" required placeholder="Enter title" />
+
+      <label for="artist">Artist</label>
+      <input type="text" [(ngModel)]="editData.artist" name="artist" id="artist" placeholder="Enter artist name" />
+
+      <label for="location">Location</label>
+      <input type="text" [(ngModel)]="editData.location" name="location" id="location" placeholder="Enter location" />
+
+      <label for="imageUrl">Image URL</label>
+      <input type="text" [(ngModel)]="editData.imageUrl" name="imageUrl" id="imageUrl" placeholder="Enter image URL" />
+
+      <label for="description">Description</label>
+      <textarea [(ngModel)]="editData.description" name="description" id="description" placeholder="Enter description"></textarea>
+
+      <div class="editmodal-buttons">
+        <button type="submit" class="btn btn-success">Save</button>
+        <button type="button" class="btn btn-secondary" (click)="closeEditModal()">Cancel</button>
       </div>
     </form>
   </div>
-</ng-template>
+</div>
+</div>
